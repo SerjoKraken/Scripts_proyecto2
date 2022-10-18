@@ -3,17 +3,18 @@ version: '3.8'
 networks:
   WEB:
 
-Wordpress:
-  image: wordpress:latest
-  container_name: web_server
-  volumes:
-    - /opt/wordpress:/var/www/html/wp-content
-  environment:
-    - WORDPRESS_DB_HOST=192.168.0.7
-    - WORDPRESS_DB_USER=user_wp
-    - WORDPRESS_DB_PASSWORD=123456
-    - WORDPRESS_DB_NAME=db_wp
-  ports:
-    - 8080:80
-  networks:
-    - WEB
+services:
+  Wordpress:
+    image: wordpress:latest
+    container_name: web_server
+    volumes:
+      - /opt/wordpress:/var/www/html/wp-content
+    environment:
+      - WORDPRESS_DB_HOST=192.168.0.7
+      - WORDPRESS_DB_USER=user_wp
+      - WORDPRESS_DB_PASSWORD=123456
+      - WORDPRESS_DB_NAME=db_wp
+    ports:
+      - 8080:80
+    networks:
+      - WEB
