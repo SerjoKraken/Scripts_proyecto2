@@ -1,0 +1,19 @@
+version: '3.1'
+
+networks:
+  RED_WEB:
+
+Wordpress:
+  image: wordpress:latest
+  container_name: servidor_web
+  volumes:
+    - /opt/wordpress:/var/www/html/wp-content
+  environment:
+    - WORDPRESS_DB_HOST=192.168.0.7
+    - WORDPRESS_DB_USER=user_wp
+    - WORDPRESS_DB_PASSWORD=123456
+    - WORDPRESS_DB_NAME=db_wp
+  ports:
+    - 8080:80
+  networks:
+    - RED_WEB
