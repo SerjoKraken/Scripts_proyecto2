@@ -1,12 +1,12 @@
-version: '3.1'
+version: '3.8'
 
 networks:
-  RED_WEB:
+  WEB:
 
 services:
   MariaDB:
     image: mariadb:latest
-    container_name: servidor_datos
+    container_name: db_server
     volumes:
       - /opt/mysql_wp:/var/lib/mysql
     environment:
@@ -17,4 +17,4 @@ services:
     ports:
       - 3306:3306
     networks:
-      - RED_WEB
+      - WEB

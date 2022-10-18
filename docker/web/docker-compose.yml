@@ -1,11 +1,11 @@
-version: '3.1'
+version: '3.8'
 
 networks:
-  RED_WEB:
+  WEB:
 
 Wordpress:
   image: wordpress:latest
-  container_name: servidor_web
+  container_name: web_server
   volumes:
     - /opt/wordpress:/var/www/html/wp-content
   environment:
@@ -16,4 +16,4 @@ Wordpress:
   ports:
     - 8080:80
   networks:
-    - RED_WEB
+    - WEB
