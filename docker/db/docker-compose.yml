@@ -16,5 +16,6 @@ services:
       - MYSQL_ROOT_PASSWORD=123456
     ports:
       - 3306:3306
+    restart: unless-stopped
     networks:
       - WEB
